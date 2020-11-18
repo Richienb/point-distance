@@ -1,13 +1,11 @@
 const test = require("ava")
-const theModule = require(".")
+const pointDistance = require(".")
 
 test("main", t => {
-	t.throws(() => {
-		theModule(123)
-	}, {
-		instanceOf: TypeError,
-		message: "Expected a string, got number"
-	})
+	t.is(pointDistance([0, 0], [3, 4]), 5)
+	t.is(pointDistance([0, 0, 0], [3, 12, 4]), 13)
+})
 
-	t.is(theModule("unicorns"), "unicorns & rainbows")
+test(".earth()", t => {
+	t.is(pointDistance.earth([-36.848161, 174.762256], [-36.848513, 174.7635]), 117.6259)
 })

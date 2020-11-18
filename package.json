@@ -1,8 +1,8 @@
 {
-	"name": "the-module",
+	"name": "point-distance",
 	"version": "0.0.0",
-	"description": "My awesome module.",
-	"repository": "https://github.com/Richienb/the-module.git",
+	"description": "Get the distance between 2 points on a 2d, 3d or Earth-like plane.",
+	"repository": "https://github.com/Richienb/point-distance.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
 	"license": "MIT",
 	"main": "index.js",
@@ -17,8 +17,21 @@
 		"lint": "xo",
 		"test": "xo && ava"
 	},
-	"keywords": [],
-	"dependencies": {},
+	"keywords": [
+		"earth",
+		"geography",
+		"geometry",
+		"coordinates",
+		"distance",
+		"pythagoras",
+		"length",
+		"depth",
+		"height",
+		"math"
+	],
+	"dependencies": {
+		"geolib": "^3.3.1"
+	},
 	"devDependencies": {
 		"ava": "^3.13.0",
 		"eslint-config-richienb": "^0.5.0",

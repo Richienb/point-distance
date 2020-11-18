@@ -1,41 +1,54 @@
-# the-module [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/the-module/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/the-module)
+# point-distance [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/point-distance/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/point-distance)
 
-My awesome module.
+Get the distance between 2 points on a 2d, 3d or Earth-like plane.
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/point-distance.png)](https://npmjs.com/package/point-distance)
 
 ## Install
 
 ```sh
-npm install the-module
+npm install point-distance
 ```
 
 ## Usage
 
 ```js
-const theModule = require("the-module")
+const pointDistance = require("point-distance")
 
-theModule("unicorns")
-//=> "unicorns & rainbows"
+console.log(pointDistance([0, 0], [3, 4]))
+//=> 5
+
+console.log(pointDistance([0, 0, 0], [3, 12, 4]))
+//=> 13
+
+console.log(pointDistance.earth([-36.848161, 174.762256], [-36.848513, 174.7635]))
+//=> 117.6259
 ```
 
 ## API
 
-### theModule(input, options?)
+### pointDistance([startX, startY, startZ?], [endX, endY, endZ?])
 
-#### input
+Get the distance between 2 points on a 2d or 3d plane.
 
-Type: `string`
+#### startX, startY, startZ, endX, endY, endZ
 
-Lorem ipsum.
+Type: `number`
 
-#### options
+The starting and ending coordinates to get the distance between.
 
-Type: `object`
+### pointDistance.earth([startLatitude, startLongitude, startAltitude?], [endLatitude, endLongitude, endAltitude?])
 
-##### postfix
+Get the distance between 2 coordinates on Earth. Returns the distance in metres.
 
-Type: `string`\
-Default: `rainbows`
+#### startLatitude, startLongitude, endLatitude, endLongitude
 
-Lorem ipsum.
+Type: `number`
+
+The starting and ending coordinates to get the distance between.
+
+#### startAltitude, endAltitude
+
+Type: `number`
+
+The starting and ending altitudes between the 2 coordinates in metres.
