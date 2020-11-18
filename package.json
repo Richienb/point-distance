@@ -1,6 +1,6 @@
 {
 	"name": "point-distance",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Get the distance between 2 points on a 2d, 3d or Earth-like plane.",
 	"repository": "https://github.com/Richienb/point-distance.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
