@@ -15,7 +15,7 @@ module.exports = ([startX, startY, startZ = 0], [endX, endY, endZ = 0]) => {
 	assertNumber(endY)
 	assertNumber(endZ)
 
-	return Math.sqrt(((endX - startX) ** 2) + ((endY - startY) ** 2) + ((endZ - startZ) ** 2))
+	return Math.hypot(endX - startX, endY - startY, endZ - startZ)
 }
 
 module.exports.earth = ([startLatitude, startLongitude, startAltitude = 0], [endLatitude, endLongitude, endAltitude = 0]) => {
@@ -24,11 +24,11 @@ module.exports.earth = ([startLatitude, startLongitude, startAltitude = 0], [end
 	assertNumber(endLatitude)
 	assertNumber(endLongitude)
 
-	return Math.sqrt((getPreciseDistance({
+	return Math.hypot(getPreciseDistance({
 		latitude: startLatitude,
 		longitude: startLongitude
 	}, {
 		latitude: endLatitude,
 		longitude: endLongitude
-	}, 1e-4) ** 2) + ((startAltitude - endAltitude) ** 2))
+	}, 1e-4), startAltitude - endAltitude)
 }
